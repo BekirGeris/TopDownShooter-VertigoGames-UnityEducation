@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TopDownShooter.PlayerControls
 {
-    [CreateAssetMenu(menuName = "TopDown Shooter/Movement/Player Movement Settings")]
+    [CreateAssetMenu(menuName = "TopDown Shooter/Player Controls/Movement/Player Movement Settings")]
     public class PlayerMovementSettings : ScriptableObject
     {
         public float HorizontalSpeed = 5;
