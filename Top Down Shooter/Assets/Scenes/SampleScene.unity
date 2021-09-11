@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 455680861}
   - component: {fileID: 455680860}
   - component: {fileID: 455680859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,6 +219,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &522488924 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 513949642604374129, guid: 2d126c7efcfaf9348a1d72585b373ecd, type: 3}
+  m_PrefabInstance: {fileID: 1531641942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &653083214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2000487106649006018, guid: 2d126c7efcfaf9348a1d72585b373ecd, type: 3}
+  m_PrefabInstance: {fileID: 1531641942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &653083219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653083214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759971a2d67fd13439bab839f1998172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputData: {fileID: 11400000, guid: de383b9c92709a84b8d42f7074821bc1, type: 2}
+  _tower: {fileID: 522488924}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +343,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 513949642604374129, guid: 2d126c7efcfaf9348a1d72585b373ecd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 513949642604374129, guid: 2d126c7efcfaf9348a1d72585b373ecd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 513949642604374129, guid: 2d126c7efcfaf9348a1d72585b373ecd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2000487106649006018, guid: 2d126c7efcfaf9348a1d72585b373ecd, type: 3}
       propertyPath: m_Name
       value: LocalPlayer
@@ -376,6 +412,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4991497480549315847, guid: 39c794a102e9df04087e28ef0d5ef1b0, type: 3}
+      propertyPath: _inputRotationData
+      value: 
+      objectReference: {fileID: 11400000, guid: de383b9c92709a84b8d42f7074821bc1, type: 2}
     - target: {fileID: 5090041320641060251, guid: 39c794a102e9df04087e28ef0d5ef1b0, type: 3}
       propertyPath: m_RootOrder
       value: 3
