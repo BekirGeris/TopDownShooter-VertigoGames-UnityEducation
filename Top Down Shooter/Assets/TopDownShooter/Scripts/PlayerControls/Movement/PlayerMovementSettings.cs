@@ -9,6 +9,7 @@ namespace TopDownShooter.PlayerControls
     {
         public float HorizontalSpeed = 5;
         public float VerticalSpeed = 5;
+        public float RotationSpeed = 5;
 
     }
 }
