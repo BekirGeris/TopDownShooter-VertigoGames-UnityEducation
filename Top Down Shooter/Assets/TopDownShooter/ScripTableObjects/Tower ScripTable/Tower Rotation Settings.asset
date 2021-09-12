@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Tower Rotation Settings
   m_EditorClassIdentifier: 
   TowerRotationSpeed: 1
+  TowerCanonRotationSpeed: 0.2
+  TowerCanonRotationAngleMax: 10
+  TowerCanonRotationAngleMin: -10
