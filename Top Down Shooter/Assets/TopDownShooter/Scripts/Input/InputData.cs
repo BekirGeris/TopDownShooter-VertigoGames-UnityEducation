@@ -14,11 +14,11 @@ namespace TopDownShooter.PlayerInput
 
         [Header("Key Base Control")]
         [SerializeField] private bool _keyBaseHorizontalActive;
-        [SerializeField] private KeyCode PositiveHorizontalKeyCode;
-        [SerializeField] private KeyCode NegativeHorizontalKeyCode;
+        [SerializeField] public KeyCode PositiveHorizontalKeyCode;
+        [SerializeField] public KeyCode NegativeHorizontalKeyCode;
         [SerializeField] private bool _keyBaseVerticalActive;
-        [SerializeField] private KeyCode PositiveVerticalKeyCode;
-        [SerializeField] private KeyCode NegativeVerticalKeyCode;
+        [SerializeField] public KeyCode PositiveVerticalKeyCode;
+        [SerializeField] public KeyCode NegativeVerticalKeyCode;
         [SerializeField] private float _increaseAmount = 0.015f;
 
         public override void ProcessInput(bool isActive)

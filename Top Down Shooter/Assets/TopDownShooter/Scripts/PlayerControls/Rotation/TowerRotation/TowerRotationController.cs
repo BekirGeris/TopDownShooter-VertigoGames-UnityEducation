@@ -11,24 +11,23 @@ namespace TopDownShooter.PlayerControls
         [SerializeField] private Transform _tower;
         [SerializeField] private Transform _towerCanon;
         [SerializeField] private TowerRotationSettings _towerRotationSettings;
+        private float value = 0;
         private void Update()
         {
             _tower.Rotate(0, _inputData.Horizontal * _towerRotationSettings.TowerRotationSpeed, 0, Space.Self);
 
+            value = Mathf.Clamp(value, _towerRotationSettings.TowerCanonRotationAngleMin, _towerRotationSettings.TowerCanonRotationAngleMax);
 
-            if (_towerRotationSettings.TowerCanonRotationMax >= _towerCanon.rotation.x && _towerCanon.rotation.x >= _towerRotationSettings.TowerCanonRotationMin)
+            if(Input.GetKey(_inputData.PositiveVerticalKeyCode))
             {
-                _towerCanon.Rotate(_inputData.Vertical * _towerRotationSettings.TowerRotationSpeed, 0, 0, Space.Self);
-            }
-            else
+                _towerCanon.localRotation = Quaternion.Euler(value, _towerCanon.rotation.y, _towerCanon.rotation.z);
+                value += _towerRotationSettings.TowerCanonRotationSpeed;
+            } else if (Input.GetKey(_inputData.NegativeVerticalKeyCode))
             {
-                if (_towerRotationSettings.TowerCanonRotationMax <= _towerCanon.rotation.x && _inputData.Vertical < 0)
-                    _towerCanon.Rotate(_inputData.Vertical * _towerRotationSettings.TowerRotationSpeed, 0, 0, Space.Self);
-
-                if (_towerRotationSettings.TowerCanonRotationMin >= _towerCanon.rotation.x && _inputData.Vertical > 0)
-                    _towerCanon.Rotate(_inputData.Vertical * _towerRotationSettings.TowerRotationSpeed, 0, 0, Space.Self);
+                _towerCanon.localRotation = Quaternion.Euler(value, _towerCanon.rotation.y, _towerCanon.rotation.z);
+                value -= _towerRotationSettings.TowerCanonRotationSpeed;
             }
-            
+            Debug.Log(value);
         }
     }
 }
