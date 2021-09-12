@@ -8,5 +8,7 @@ namespace TopDownShooter.PlayerControls
     public class TowerRotationSettings : ScriptableObject
     {
         public float TowerRotationSpeed = 1;
+        public float TowerCanonRotationMax = 10;
+        public float TowerCanonRotationMin = -10;
     }
 }

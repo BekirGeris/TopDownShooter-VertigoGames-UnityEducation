@@ -20,7 +20,7 @@ MonoBehaviour:
   _keyBaseHorizontalActive: 1
   PositiveHorizontalKeyCode: 101
   NegativeHorizontalKeyCode: 113
-  _keyBaseVerticalActive: 0
-  PositiveVerticalKeyCode: 0
-  NegativeVerticalKeyCode: 0
+  _keyBaseVerticalActive: 1
+  PositiveVerticalKeyCode: 273
+  NegativeVerticalKeyCode: 274
   _increaseAmount: 0.015

@@ -8,6 +8,6 @@ namespace TopDownShooter.PlayerControls
     {
         public float VerticalAngle = 1;
         public float VerticalSpeed = 10;
-        public float RightLeftCoefficient = 2;
+        public float RightLeftCoefficient = 3;
     }
 }

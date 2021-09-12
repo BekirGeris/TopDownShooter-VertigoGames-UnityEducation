@@ -21,22 +21,25 @@ namespace TopDownShooter.PlayerInput
         [SerializeField] private KeyCode NegativeVerticalKeyCode;
         [SerializeField] private float _increaseAmount = 0.015f;
 
-        public override void ProcessInput()
+        public override void ProcessInput(bool isActive)
         {
-            if (_axisActive)
+            if (isActive)
             {
-                Horizontal = Input.GetAxis(AxisNameHorizontal.ToString());
-                Vertical = Input.GetAxis(AxisNameVertical.ToString());
-            }
-            else
-            {
-                if (_keyBaseHorizontalActive)
+                if (_axisActive)
                 {
-                    KeyBaseAxisControl(ref Horizontal, PositiveHorizontalKeyCode, NegativeHorizontalKeyCode);
+                    Horizontal = Input.GetAxis(AxisNameHorizontal.ToString());
+                    Vertical = Input.GetAxis(AxisNameVertical.ToString());
                 }
-                if (_keyBaseVerticalActive)
+                else
                 {
-                    KeyBaseAxisControl(ref Vertical, PositiveVerticalKeyCode, NegativeVerticalKeyCode);
+                    if (_keyBaseHorizontalActive)
+                    {
+                        KeyBaseAxisControl(ref Horizontal, PositiveHorizontalKeyCode, NegativeHorizontalKeyCode);
+                    }
+                    if (_keyBaseVerticalActive)
+                    {
+                        KeyBaseAxisControl(ref Vertical, PositiveVerticalKeyCode, NegativeVerticalKeyCode);
+                    }
                 }
             }
         }

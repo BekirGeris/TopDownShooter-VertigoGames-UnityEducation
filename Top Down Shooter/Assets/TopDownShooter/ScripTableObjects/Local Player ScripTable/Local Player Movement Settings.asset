@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 308f1a999f2b255429baff22f3192df7, type: 3}
-  m_Name: Player Movement Settings_Local Player
+  m_Name: Local Player Movement Settings
   m_EditorClassIdentifier: 
   HorizontalSpeed: 0.25
   VerticalSpeed: 0.25
+  RotationSpeed: 2
+  MaxSpeed: 1
+  Acceleration: 0.001

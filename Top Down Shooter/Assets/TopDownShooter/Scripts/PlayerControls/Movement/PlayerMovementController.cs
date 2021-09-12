@@ -15,13 +15,12 @@ namespace TopDownShooter.PlayerControls
 
         private void Start()
         {
-            firstSpeed = _playerMovementSettings.VerticalSpeed;
+            firstSpeed = 0.25f;
         }
 
         private void Update()
         {
             _rigidbody.MovePosition((_rigidbody.position) + _rigidbody.transform.forward * _inputData.Vertical * _playerMovementSettings.VerticalSpeed);
-            //_rigidbody.MovePosition((_rigidbody.position) +  _rigidbody.transform.right * _inputData.Horizontal * _playerMovementSettings.HorizontalSpeed);
             _targetTransform.Rotate(0, _inputData.Horizontal * _playerMovementSettings.RotationSpeed, 0, Space.Self);
 
             SpeedControls();
@@ -37,7 +36,7 @@ namespace TopDownShooter.PlayerControls
                 }
             }
 
-            if (Input.GetKeyUp(KeyCode.W) || Input.GetKey(KeyCode.S))
+            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
             {
                 _playerMovementSettings.VerticalSpeed = firstSpeed;
             }
