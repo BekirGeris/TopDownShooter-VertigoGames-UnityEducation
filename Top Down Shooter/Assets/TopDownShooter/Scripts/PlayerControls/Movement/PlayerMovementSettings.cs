@@ -10,6 +10,8 @@ namespace TopDownShooter.PlayerControls
         public float HorizontalSpeed = 5;
         public float VerticalSpeed = 5;
         public float RotationSpeed = 5;
+        public float MaxSpeed = 1;
+        public float Acceleration = 0.001f;
 
     }
 }
