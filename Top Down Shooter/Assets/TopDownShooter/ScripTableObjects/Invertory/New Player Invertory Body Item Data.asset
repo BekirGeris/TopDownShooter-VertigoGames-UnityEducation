@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34a6f52de9ad82140a4cd8c66a1d4e42, type: 3}
-  m_Name: New Player Invertory Canon Item Data
+  m_Script: {fileID: 11500000, guid: 1ff9554b0d88e9c4196eb4b193922283, type: 3}
+  m_Name: New Player Invertory Body Item Data
   m_EditorClassIdentifier: 
-  _itemId: default_canon
-  _invertoryItemDataType: 0
-  _prefab: {fileID: 8843861814117183663, guid: 331b51ed69128384eaf9f9ab64c918e0, type: 3}
-  _damege: 0
+  _itemId: default_body
+  _invertoryItemDataType: 1
+  _prefab: {fileID: -1983595077860466669, guid: 8a6f209792bbdf24a99fca048996b768, type: 3}
