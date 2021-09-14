@@ -27,7 +27,6 @@ namespace TopDownShooter.PlayerControls
                 _towerCanon.localRotation = Quaternion.Euler(value, _towerCanon.rotation.y, _towerCanon.rotation.z);
                 value -= _towerRotationSettings.TowerCanonRotationSpeed;
             }
-            Debug.Log(value);
         }
     }
 }
