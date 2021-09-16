@@ -11,9 +11,13 @@ namespace TopDownShooter.Invertory
         public float Damage { get { return _damege; } }
         public override void CreateIntoInvertory(PlayerInvertoryController playerInvertory)
         {
-            var instantLated = InstalLiateAndInitialPrefab(playerInvertory.parent);
-            //
+            InstalLiateAndInitialPrefab(playerInvertory.parent);
             Debug.Log("Canon");
+        }
+
+        public void Shoot()
+        {
+            _instantiated.Shoot();
         }
     }
 }

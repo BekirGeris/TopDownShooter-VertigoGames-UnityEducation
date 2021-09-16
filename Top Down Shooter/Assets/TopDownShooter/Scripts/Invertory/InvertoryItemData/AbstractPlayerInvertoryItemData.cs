@@ -10,10 +10,11 @@ namespace TopDownShooter.Invertory
         [SerializeField] protected string _itemId;
         [SerializeField] protected InvertoryItemDataType _invertoryItemDataType;
         [SerializeField] protected T _prefab;
-        
+        [SerializeField] protected T _instantiated;
         protected T InstalLiateAndInitialPrefab(Transform parent)
         {
-            return Instantiate(_prefab, parent);
+            _instantiated = Instantiate(_prefab, parent);
+            return _instantiated;
         }
     }
 }

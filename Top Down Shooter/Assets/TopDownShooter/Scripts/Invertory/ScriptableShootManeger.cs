@@ -18,9 +18,14 @@ namespace TopDownShooter.Invertory
             base.Destroy();
             Debug.Log("ScriptableShootManeger destroy");
         }
-        public void Shoot()
+        public void Shoot(Vector3 origin, Vector3 direction)
         {
-            Debug.Log("ScriptableShootManeger shoot");
+            RaycastHit rHit;
+            var physics = Physics.Raycast(origin, direction, out rHit);
+            if (physics)
+            {
+                Debug.Log("Collider : " + rHit.collider.name);
+            }
         }
     }
 }

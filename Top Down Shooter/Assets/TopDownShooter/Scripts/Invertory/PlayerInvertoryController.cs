@@ -8,6 +8,7 @@ namespace TopDownShooter.Invertory
     {
         [SerializeField] private AbstractBasePlayerInvertorynItemData[] _invertoryItemDataAray;
         private List<AbstractBasePlayerInvertorynItemData> _instantiatedItemDataList;
+
         public Transform parent;
         private void Start()
         {
