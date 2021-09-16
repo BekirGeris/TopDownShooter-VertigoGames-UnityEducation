@@ -7,7 +7,7 @@ namespace TopDownShooter.Invertory
     [CreateAssetMenu(menuName = "TopDown Shooter/Invertory/Player Invertory Body Data")]
     public class PlayerInvertoryBodyItemData : AbstractPlayerInvertoryItemData<PlayerInvertoryBodyItemMono>
     {
-        public override void CreateIntoInvertory(PlayerInvertoryController playerInvertory)
+        public override void Initialize(PlayerInvertoryController playerInvertory)
         {
             var instantLated = InstalLiateAndInitialPrefab(playerInvertory.parent);
             Debug.Log("Body");

@@ -9,6 +9,7 @@ namespace TopDownShooter.Invertory
         [SerializeField] private Transform _canonShootPoint;
         public void Shoot()
         {
+            // ayrýca efektler ve benzeri ekleyin
             ScriptableShootManeger.Instance.Shoot(_canonShootPoint.position, _canonShootPoint.forward);
         }
     }
