@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TopDownShooter.Stat;
 
 namespace TopDownShooter.Invertory
 {
@@ -25,6 +26,11 @@ namespace TopDownShooter.Invertory
             if (physics)
             {
                 Debug.Log("Collider : " + rHit.collider.name);
+            }
+            int colliderInstanceId = rHit.collider.GetInstanceID();
+            if (DamagebleHelper.Damagebles.ContainsKey(colliderInstanceId))
+            {
+                DamagebleHelper.Damagebles[colliderInstanceId].Damage(5);
             }
         }
     }
