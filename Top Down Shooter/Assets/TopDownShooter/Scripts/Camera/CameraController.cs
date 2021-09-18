@@ -8,7 +8,6 @@ namespace TopDownShooter.Camera
     {
         [SerializeField] private CameraSettings _cameraSettings;
         [SerializeField] private Transform _rotationTransform;
-        [SerializeField] private Transform _positionTransform;
         [SerializeField] private Transform _cameraTransform;
         private void Update()
         {

@@ -15,7 +15,7 @@ namespace TopDownShooter.PlayerControls
 
         private void Start()
         {
-            firstSpeed = 0.25f;
+            firstSpeed = 0.1f;
         }
 
         private void Update()

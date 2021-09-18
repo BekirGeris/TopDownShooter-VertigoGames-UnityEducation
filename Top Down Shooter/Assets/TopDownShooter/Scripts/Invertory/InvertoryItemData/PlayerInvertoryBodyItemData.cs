@@ -9,7 +9,7 @@ namespace TopDownShooter.Invertory
     {
         public override void Initialize(PlayerInvertoryController playerInvertory)
         {
-            var instantLated = InstalLiateAndInitialPrefab(playerInvertory.parent);
+            var instantLated = InstalLiateAndInitialPrefab(playerInvertory.BodyParent);
             Debug.Log("Body");
         }
     }

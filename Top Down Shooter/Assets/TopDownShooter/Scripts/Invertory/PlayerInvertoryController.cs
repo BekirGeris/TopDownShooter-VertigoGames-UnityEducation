@@ -10,7 +10,8 @@ namespace TopDownShooter.Invertory
         [SerializeField] private AbstractBasePlayerInvertorynItemData[] _invertoryItemDataAray;
        
         private List<AbstractBasePlayerInvertorynItemData> _instantiatedItemDataList;
-        public Transform parent;
+        public Transform BodyParent;
+        public Transform CanonParent;
         public ReactiveCommand ReactiveShootCommand { get; private set; }
 
         private void Start()

@@ -18,7 +18,7 @@ namespace TopDownShooter.Invertory
         {
             base.Initialize(playerInvertory);
             playerInvertory.ReactiveShootCommand.Subscribe(OnReactiveShootCommand).AddTo(_compositeDisposable);
-            InstalLiateAndInitialPrefab(playerInvertory.parent);
+            InstalLiateAndInitialPrefab(playerInvertory.CanonParent);
             Debug.Log("Canon");
         }
         public override void Destroy()
