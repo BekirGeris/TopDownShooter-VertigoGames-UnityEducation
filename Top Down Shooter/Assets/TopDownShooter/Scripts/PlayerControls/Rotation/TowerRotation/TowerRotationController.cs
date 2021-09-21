@@ -11,7 +11,12 @@ namespace TopDownShooter.PlayerControls
         [SerializeField] private Transform _tower;
         [SerializeField] private Transform _towerCanon;
         [SerializeField] private TowerRotationSettings _towerRotationSettings;
+        [SerializeField] private TowerRotationController _towerRotationController;
         private float value = 0;
+        public void InitializeInput(InputData inputData)
+        {
+            _inputData = inputData;
+        }
         private void Update()
         {
             _tower.Rotate(0, _inputData.Horizontal * _towerRotationSettings.TowerRotationSpeed, 0, Space.Self);

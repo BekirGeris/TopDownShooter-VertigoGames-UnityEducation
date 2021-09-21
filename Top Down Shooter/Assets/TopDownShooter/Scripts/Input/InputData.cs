@@ -20,7 +20,7 @@ namespace TopDownShooter.PlayerInput
         [SerializeField] public KeyCode PositiveVerticalKeyCode;
         [SerializeField] public KeyCode NegativeVerticalKeyCode;
         [SerializeField] private float _increaseAmount = 0.015f;
-
+        
         public override void ProcessInput(bool isActive)
         {
             if (isActive)
@@ -64,6 +64,9 @@ namespace TopDownShooter.PlayerInput
             value = Mathf.Clamp(value, -1, 1);
         }
 
-        
+        public override void ProcessInput()
+        {
+            this.ProcessInput(true);
+        }
     }
 }

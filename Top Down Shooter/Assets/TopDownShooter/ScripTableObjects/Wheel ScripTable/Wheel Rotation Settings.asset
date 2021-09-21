@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wheel Rotation Settings
   m_EditorClassIdentifier: 
   VerticalAngle: 1
-  VerticalSpeed: 10
+  VerticalSpeed: 5
   RightLeftCoefficient: 3

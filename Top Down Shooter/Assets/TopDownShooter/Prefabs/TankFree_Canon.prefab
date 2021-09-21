@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4914578731242025132}
   - component: {fileID: 3707976982362085406}
   - component: {fileID: 8843861814117183663}
-  - component: {fileID: 7532116267383796489}
+  - component: {fileID: 4115967856291812856}
   m_Layer: 0
   m_Name: TankFree_Canon
   m_TagString: Untagged
@@ -92,7 +92,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4577ee2046668dc4faae41439ead563c, type: 2}
+  - {fileID: 2100000, guid: 0ab420e2856629243bd809cccc862fd1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canonShootPoint: {fileID: 1993900566900768735}
---- !u!114 &7532116267383796489
+--- !u!114 &4115967856291812856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,6 +143,7 @@ MonoBehaviour:
   _tower: {fileID: 7530742063547776821}
   _towerCanon: {fileID: 5516149332311879315}
   _towerRotationSettings: {fileID: 11400000, guid: ca6fb36e141f9cb42b6752558d678b1f, type: 2}
+  _towerRotationController: {fileID: 0}
 --- !u!1 &6660384474679944098
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +205,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4577ee2046668dc4faae41439ead563c, type: 2}
+  - {fileID: 2100000, guid: 0ab420e2856629243bd809cccc862fd1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -15,4 +15,4 @@ MonoBehaviour:
   TowerRotationSpeed: 1
   TowerCanonRotationSpeed: 0.2
   TowerCanonRotationAngleMax: 10
-  TowerCanonRotationAngleMin: -10
+  TowerCanonRotationAngleMin: -15
