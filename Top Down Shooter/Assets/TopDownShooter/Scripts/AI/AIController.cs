@@ -27,7 +27,6 @@ namespace TopDownShooter.AI
             _aiRotationInput = Instantiate(_aiRotationInput);
             _towerRotationInput = Instantiate(_towerRotationInput);
 
-
             _playerMovementController.InitializeInput(_aiMovementInput);
             _playerTowerRotationController.InitializeInput(_towerRotationInput);
 

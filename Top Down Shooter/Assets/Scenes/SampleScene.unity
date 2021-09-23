@@ -1033,7 +1033,6 @@ GameObject:
   - component: {fileID: 457752427}
   - component: {fileID: 457752430}
   - component: {fileID: 457752429}
-  - component: {fileID: 457752428}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1088,23 +1087,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInvertoryController: {fileID: 457752425}
   _shootData: {fileID: 11400000, guid: 624643372f74afd449f9ad486edc7bb0, type: 2}
---- !u!114 &457752428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457752424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 759971a2d67fd13439bab839f1998172, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputData: {fileID: 11400000, guid: 286d81fed5c75c54085112591fa9595d, type: 2}
-  _tower: {fileID: 1570303662}
-  _towerCanon: {fileID: 0}
-  _towerRotationSettings: {fileID: 11400000, guid: ca6fb36e141f9cb42b6752558d678b1f, type: 2}
-  _towerRotationController: {fileID: 0}
 --- !u!54 &457752429
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2094,13 +2076,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7d314b1b72b654a8ebd4e8e038f3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _aIMovementInput: {fileID: 11400000, guid: 5d6393b7c9dc53342bd0838d89d9589e, type: 2}
-  _aIRotationInput: {fileID: 11400000, guid: 4aa2d583d38a5eb40b4a1c1770997818, type: 2}
-  _TowerRotationInput: {fileID: 11400000, guid: a762a784a7e81bd41bdac91ec62cc953, type: 2}
-  _whelInputData: {fileID: 11400000, guid: 94cdd3e126d576441a064e5977d9bb64, type: 2}
+  _aiMovementInput: {fileID: 11400000, guid: f9ed58f2275bf37439ac7e596bbe1605, type: 2}
+  _aiRotationInput: {fileID: 11400000, guid: 069c5f86ff28f804bbf38933ab6e04b0, type: 2}
+  _towerRotationInput: {fileID: 0}
   _playerMovementController: {fileID: 1528259080}
-  _playerInvertoryController: {fileID: 1528259082}
-  _towerRotationController: {fileID: 1528259078}
+  _inventoryController: {fileID: 1528259082}
+  _playerTowerRotationController: {fileID: 0}
+  TargetList:
+  - {fileID: 1635935879}
 --- !u!114 &1528259078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2236,6 +2219,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1635935878}
+  - component: {fileID: 1635935880}
+  - component: {fileID: 1635935879}
   m_Layer: 0
   m_Name: BodyParent
   m_TagString: Untagged
@@ -2257,6 +2242,33 @@ Transform:
   m_Father: {fileID: 457752426}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1635935879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635935877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4e8e6186edede4b9a9731423f68c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 1635935880}
+  Health: 100
+--- !u!65 &1635935880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635935877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9107852, y: 1.3588167, z: 2.6642036}
+  m_Center: {x: 0.00000035762787, y: -0.05349356, z: -0.038929224}
 --- !u!1001 &1747318640
 PrefabInstance:
   m_ObjectHideFlags: 0
