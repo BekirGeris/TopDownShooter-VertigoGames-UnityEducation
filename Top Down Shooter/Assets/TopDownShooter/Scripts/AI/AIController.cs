@@ -1,107 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
-<<<<<<< Updated upstream
 using TopDownShooter.Invertory;
 using TopDownShooter.PlayerControls;
 using TopDownShooter.PlayerInput;
-using UniRx;
 using UnityEngine;
-
+ 
 namespace TopDownShooter.AI
-{
+{ 
     public class AIController : MonoBehaviour
     {
         [SerializeField] private InputDataAI _aiMovementInput;
         [SerializeField] private InputDataAI _aiRotationInput;
         [SerializeField] private InputDataAI _towerRotationInput;
+        [SerializeField] private PlayerInvertoryController _playerInvertoryController;
         [SerializeField] private PlayerMovementController _playerMovementController;
-        [SerializeField] private PlayerInvertoryController _inventoryController;
-        [SerializeField] private TowerRotationController _playerTowerRotationController;
+        [SerializeField] private TowerRotationController _towerRotationController;
 
-        public List<AITarget> TargetList;
-        private Vector3 _targetMovementPosition;
-        private CompositeDisposable _targetDispose;
-        private void Start()
+        public Transform _movementTarget;
+        public Transform _towerTarget;
+        private void Awake()
         {
-            //creating new one
             _aiMovementInput = Instantiate(_aiMovementInput);
             _aiRotationInput = Instantiate(_aiRotationInput);
             _towerRotationInput = Instantiate(_towerRotationInput);
-
             _playerMovementController.InitializeInput(_aiMovementInput);
-            _playerTowerRotationController.InitializeInput(_towerRotationInput);
-
-            UpdateTarget();
-
+            _towerRotationController.InitializeInput(_towerRotationInput);
         }
-
-        private void UpdateTarget()
-        {
-            var position = transform.position;
-            _targetMovementPosition = position + ((TargetList[0].transform.position - position).normalized * (Vector3.Distance(TargetList[0].transform.position, position) - 10));
-
-
-
-            _aiMovementInput.SetTarget(transform, _targetMovementPosition);
-            _aiRotationInput.SetTarget(transform, _targetMovementPosition);
-            //_towerRotationInput.SetTarget(_playerTowerRotationController.TowerTransform, TargetList[0].transform.position);
-
-            _targetDispose = new CompositeDisposable();
-            //TargetList[0].PlayerStat.OnDeath.Subscribe(OnTargetDeath).AddTo(_targetDispose);
-
-        }
-
-        private void OnTargetDeath(Unit obj)
-        {
-            Debug.Log("target is dead");
-            _targetDispose.Dispose();
-            TargetList.RemoveAt(0);
-            if (TargetList.Count > 0)
-            {
-                UpdateTarget();
-            }
-            else
-            {
-                this.enabled = false;
-            }
-        }
-
         private void Update()
         {
+            _aiMovementInput.SetTarget(transform, _movementTarget.position);
+            _aiRotationInput.SetTarget(transform, _movementTarget.position);
+            _towerRotationInput.SetTarget(_towerRotationController.TowerTransform, _towerTarget.position);
+
             _aiMovementInput.ProcessInput();
             _aiRotationInput.ProcessInput();
             _towerRotationInput.ProcessInput();
 
-
-            if (_towerRotationInput.Horizontal < 2 && Vector3.Distance(_targetMovementPosition, transform.position) < 5)
+            if(Vector3.Distance(_movementTarget.position, transform.position) < 25)
             {
-                _inventoryController.ReactiveShootCommand.Execute();
+                _playerInvertoryController.ReactiveShootCommand.Execute();
             }
-
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawSphere(_targetMovementPosition, 1);
         }
     }
 }
-=======
-using UnityEngine;
-
-public class AIController : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
->>>>>>> Stashed changes

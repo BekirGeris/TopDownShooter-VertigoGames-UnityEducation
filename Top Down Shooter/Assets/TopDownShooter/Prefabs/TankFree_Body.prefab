@@ -255,7 +255,6 @@ GameObject:
   - component: {fileID: 1485982688791363096}
   - component: {fileID: 3564767158002249411}
   - component: {fileID: -1983595077860466669}
-  - component: {fileID: -8617195904791313513}
   - component: {fileID: 39085516585961270}
   m_Layer: 0
   m_Name: TankFree_Body
@@ -343,19 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab8479ef9c42a34c8568d5570586ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &-8617195904791313513
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6576598353142285656}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9107852, y: 1.3588167, z: 2.6642036}
-  m_Center: {x: 0.00000035762787, y: -0.05349356, z: -0.038929224}
 --- !u!114 &39085516585961270
 MonoBehaviour:
   m_ObjectHideFlags: 0
