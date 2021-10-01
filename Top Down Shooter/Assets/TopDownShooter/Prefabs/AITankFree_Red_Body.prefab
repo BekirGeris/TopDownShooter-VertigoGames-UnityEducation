@@ -255,7 +255,6 @@ GameObject:
   - component: {fileID: 88352251181840468}
   - component: {fileID: 2656629351008086159}
   - component: {fileID: 6781854065335027273}
-  - component: {fileID: 4454319742087627849}
   m_Layer: 0
   m_Name: AITankFree_Red_Body
   m_TagString: Untagged
@@ -342,19 +341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab8479ef9c42a34c8568d5570586ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &4454319742087627849
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5684215484769256212}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9107852, y: 1.3852694, z: 2.6642036}
-  m_Center: {x: 0.00000035762787, y: -0.06671986, z: -0.038929224}
 --- !u!1 &8196948035200197066
 GameObject:
   m_ObjectHideFlags: 0

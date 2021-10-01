@@ -139,11 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759971a2d67fd13439bab839f1998172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputData: {fileID: 11400000, guid: 286d81fed5c75c54085112591fa9595d, type: 2}
+  _inputData: {fileID: 11400000, guid: d5b5719053ac65440b0b5f9c4f8689da, type: 2}
   _tower: {fileID: 7530742063547776821}
   _towerCanon: {fileID: 5516149332311879315}
   _towerRotationSettings: {fileID: 11400000, guid: ca6fb36e141f9cb42b6752558d678b1f, type: 2}
-  _towerRotationController: {fileID: 0}
 --- !u!1 &6660384474679944098
 GameObject:
   m_ObjectHideFlags: 0

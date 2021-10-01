@@ -16,5 +16,6 @@ MonoBehaviour:
   _invertoryItemDataType: 0
   _prefab: {fileID: -4403658232734483940, guid: 8bac0f94d3334ec4cb29dcfd6e356c52, type: 3}
   _instantiated: {fileID: 0}
-  _damege: 0
+  _damege: 10
   _rpm: 1
+  _armorPenetration: 0.1

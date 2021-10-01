@@ -62,10 +62,10 @@ namespace TopDownShooter.AI
                 this.enabled = false;
             }
         }
-
         private void Update()
         {
             UpdateTargetPosition();
+            UpdateTargetList();
 
             _aiMovementInput.ProcessInput();
             _aiRotationInput.ProcessInput();
@@ -76,10 +76,16 @@ namespace TopDownShooter.AI
                 _playerInvertoryController.ReactiveShootCommand.Execute();
             }
         }
-        private void OnDrawGizmosSelected()
+        public void UpdateTargetList()
         {
-            Gizmos.color = Color.green;
-            Gizmos.DrawSphere(_targetMovementPosition, 1);
+            for(int i = 0; i <= TargetList.Count - 1; i++)
+            {
+                if (TargetList[i] == null)
+                {
+                    Debug.Log("null");
+                    TargetList.RemoveAt(i);
+                }
+            }
         }
     } 
 }

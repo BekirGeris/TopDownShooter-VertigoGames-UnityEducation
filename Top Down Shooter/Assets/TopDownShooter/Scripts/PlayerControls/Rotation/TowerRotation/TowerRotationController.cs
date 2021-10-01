@@ -7,7 +7,7 @@ namespace TopDownShooter.PlayerControls
 { 
     public class TowerRotationController : MonoBehaviour
     {
-        [SerializeField] private InputData _inputData;
+        [SerializeField] private AbstractInputData _inputData;
         [SerializeField] private Transform _tower;
         [SerializeField] private Transform _towerCanon;
         [SerializeField] private TowerRotationSettings _towerRotationSettings;
@@ -15,7 +15,7 @@ namespace TopDownShooter.PlayerControls
         public Transform TowerTransform { get { return _tower; } } 
         
         private float value = 0;
-        public void InitializeInput(InputData inputData)
+        public void InitializeInput(AbstractInputData inputData)
         {
             _inputData = inputData;
         }
@@ -25,11 +25,11 @@ namespace TopDownShooter.PlayerControls
 
             value = Mathf.Clamp(value, _towerRotationSettings.TowerCanonRotationAngleMin, _towerRotationSettings.TowerCanonRotationAngleMax);
 
-            if(Input.GetKey(_inputData.PositiveVerticalKeyCode))
+            if(Input.GetKey(KeyCode.E)) //_inputData.PositiveVerticalKeyCode)
             {
                 _towerCanon.localRotation = Quaternion.Euler(value, _towerCanon.rotation.y, _towerCanon.rotation.z);
                 value += _towerRotationSettings.TowerCanonRotationSpeed;
-            } else if (Input.GetKey(_inputData.NegativeVerticalKeyCode))
+            } else if (Input.GetKey(KeyCode.Q)) //_inputData.NegativeVerticalKeyCode
             {
                 _towerCanon.localRotation = Quaternion.Euler(value, _towerCanon.rotation.y, _towerCanon.rotation.z);
                 value -= _towerRotationSettings.TowerCanonRotationSpeed;

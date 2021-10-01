@@ -17,7 +17,6 @@ namespace TopDownShooter.AI
         public override void ProcessInput()
         {
             base.ProcessInput();
-
         }
     }
 }
