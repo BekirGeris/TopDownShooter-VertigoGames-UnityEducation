@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Horizontal: 0
   Vertical: 0
-  AxisName: 
+  AxisName: Touchpad
+  IsActive: 0
