@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999540a8cabe60549ad65000cab96eeb, type: 3}
   m_Name: Tower Rotation Settings
   m_EditorClassIdentifier: 
-  TowerRotationSpeed: 1
+  TowerRotationSpeed: 5
   TowerCanonRotationSpeed: 0.2
   TowerCanonRotationAngleMax: 10
   TowerCanonRotationAngleMin: -15

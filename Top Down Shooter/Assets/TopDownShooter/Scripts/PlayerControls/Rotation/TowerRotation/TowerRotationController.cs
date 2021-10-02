@@ -25,11 +25,11 @@ namespace TopDownShooter.PlayerControls
 
             value = Mathf.Clamp(value, _towerRotationSettings.TowerCanonRotationAngleMin, _towerRotationSettings.TowerCanonRotationAngleMax);
 
-            if(Input.GetKey(KeyCode.E)) //_inputData.PositiveVerticalKeyCode)
+            if(_inputData.Vertical > 0) //_inputData.PositiveVerticalKeyCode) 
             {
                 _towerCanon.localRotation = Quaternion.Euler(value, _towerCanon.rotation.y, _towerCanon.rotation.z);
                 value += _towerRotationSettings.TowerCanonRotationSpeed;
-            } else if (Input.GetKey(KeyCode.Q)) //_inputData.NegativeVerticalKeyCode
+            } else if (_inputData.Vertical < 0) //_inputData.NegativeVerticalKeyCode
             {
                 _towerCanon.localRotation = Quaternion.Euler(value, _towerCanon.rotation.y, _towerCanon.rotation.z);
                 value -= _towerRotationSettings.TowerCanonRotationSpeed;
