@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using TopDownShooter.PlayerInput;
+using System;
 
 namespace TopDownShooter.Invertory
 {
@@ -37,6 +39,7 @@ namespace TopDownShooter.Invertory
                 _instantiatedItemDataList.Add(instantiated);
             }
         }
+
         public void ClearInvertory()
         {
             if(_instantiatedItemDataList != null)

@@ -20,7 +20,7 @@ namespace TopDownShooter.Invertory
             base.Destroy();
             Debug.Log("ScriptableShootManeger destroy");
         }
-        public void Shoot(Vector3 origin, Vector3 direction)
+        public void Shoot(Vector3 origin, Vector3 direction, IDamage damage)
         {
             RaycastHit rHit;
             var physics = Physics.Raycast(origin, direction, out rHit);
@@ -31,7 +31,7 @@ namespace TopDownShooter.Invertory
             var colliderInstanceId = rHit.collider.GetInstanceID();
             if (DamagebleHelper.Damagebles.ContainsKey(colliderInstanceId))
             {
-                DamagebleHelper.Damagebles[colliderInstanceId].Damage(1000);
+                DamagebleHelper.Damagebles[colliderInstanceId].Damage(damage);
             }
         }
     }

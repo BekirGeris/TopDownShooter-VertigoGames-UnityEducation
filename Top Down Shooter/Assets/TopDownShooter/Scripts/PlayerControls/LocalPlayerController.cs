@@ -9,11 +9,11 @@ namespace TopDownShooter
     public class LocalPlayerController : MonoBehaviour
     {
         [SerializeField] private PlayerInvertoryController _playerInvertoryController;
-        [SerializeField] private InputData _shootData;
+        [SerializeField] private AbstractInputData _shootData;
 
         private void Update()
         {
-            if (Input.GetKeyDown(_shootData.PositiveHorizontalKeyCode))
+            if (_shootData.Horizontal > 0) //Input.GetKeyDown(_shootData.PositiveHorizontalKeyCode)
             {
                 _playerInvertoryController.ReactiveShootCommand.Execute();
             }

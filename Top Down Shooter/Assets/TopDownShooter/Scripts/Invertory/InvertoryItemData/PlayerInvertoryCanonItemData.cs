@@ -7,12 +7,23 @@ using System;
 namespace TopDownShooter.Invertory
 {
     [CreateAssetMenu(menuName = "TopDown Shooter/Invertory/Player Invertory Conan Data")]
-    public class PlayerInvertoryCanonItemData : AbstractPlayerInvertoryItemData<PlayerInvertoryCanonItemMono>
+    public class PlayerInvertoryCanonItemData : AbstractPlayerInvertoryItemData<PlayerInvertoryCanonItemMono>, IDamage
     {
         [SerializeField] private float _damege;
         public float Damage { get { return _damege; } }
         [SerializeField] private float _rpm = 1f;
         public float Rpm { get { return _rpm; } }
+
+        [Range(0.1f, 2)]
+        [SerializeField] private float _armorPenetration;
+        public float ArmorPenetration { get { return _armorPenetration; } }
+
+        [SerializeField] private float _timeBaseDamage;
+        public float TimeBaseDamage { get { return _timeBaseDamage; } }
+
+        [SerializeField] private float _timedBaseDamageDuration;
+        public float TimedBaseDamageDuration { get { return _timedBaseDamageDuration; } }
+
         private float _lastShootTime;
         public override void Initialize(PlayerInvertoryController playerInvertory)
         {
@@ -20,7 +31,7 @@ namespace TopDownShooter.Invertory
             playerInvertory.ReactiveShootCommand.Subscribe(OnReactiveShootCommand).AddTo(_compositeDisposable);
             InstalLiateAndInitialPrefab(playerInvertory.CanonParent);
             Debug.Log("Canon");
-        }
+        } 
         public override void Destroy()
         {
             base.Destroy();
@@ -34,7 +45,7 @@ namespace TopDownShooter.Invertory
         {
             if(Time.time - _lastShootTime >= _rpm)
             {
-            _instantiated.Shoot();
+            _instantiated.Shoot(this);
             _lastShootTime = Time.time;
             }
             else

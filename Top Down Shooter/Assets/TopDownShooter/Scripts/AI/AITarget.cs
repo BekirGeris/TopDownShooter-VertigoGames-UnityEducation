@@ -4,7 +4,7 @@ using TopDownShooter.Stat;
 using UnityEngine;
 
 namespace TopDownShooter.AI
-{
+{ 
     public class AITarget : DamagebleObjectBase
     {
 

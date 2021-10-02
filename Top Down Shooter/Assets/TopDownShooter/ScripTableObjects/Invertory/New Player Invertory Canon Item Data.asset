@@ -15,4 +15,7 @@ MonoBehaviour:
   _itemId: default_canon
   _invertoryItemDataType: 0
   _prefab: {fileID: 8843861814117183663, guid: 331b51ed69128384eaf9f9ab64c918e0, type: 3}
-  _damege: 0
+  _instantiated: {fileID: 0}
+  _damege: 10
+  _rpm: 1
+  _armorPenetration: 0.1

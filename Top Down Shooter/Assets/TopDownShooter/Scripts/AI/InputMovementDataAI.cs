@@ -4,16 +4,13 @@ using UnityEngine;
 
 namespace TopDownShooter.AI
 {
-    [CreateAssetMenu(menuName = "TopDown Shooter/Input/AI/Movement Input Data")]
+    [CreateAssetMenu(menuName = "TopDown Shooter/Input/AI/Input Movement Data AI")]
     public class InputMovementDataAI : InputDataAI
     {
-        public Vector3 rotationDebug;
-        public Vector3 rotationDebugLocal;
-        public float rotationGapDebug;
         public override void ProcessInput()
         {
-            float distance = Vector3.Distance(_targetTransform.position, _currentTarget);
-            if (distance > 3)
+            float distance = Vector3.Distance(_targetTransform.position, _currantTarget);
+            if(distance >= 20)
             {
                 Vertical = 1;
             }
@@ -21,21 +18,18 @@ namespace TopDownShooter.AI
             {
                 Vertical = 0;
             }
-            Vector3 dir = _currentTarget - _targetTransform.position;
+            Vector3 dir = _currantTarget - _targetTransform.position;
             var rotation = Quaternion.LookRotation(dir, Vector3.up).eulerAngles;
-            rotationDebug = rotation;
-            rotationDebugLocal = _targetTransform.rotation.eulerAngles;
-            if (rotation.y > 360)
+            if(rotation.y > 360)
             {
                 rotation.y = 360 - rotation.y;
             }
             var rotationGap = rotation.y - _targetTransform.rotation.eulerAngles.y;
-            rotationGapDebug = rotationGap;
-            bool isGapNegative = rotationGap < 0;
-            if (Mathf.Abs(rotationGap) > 5)//0.25f 
+            bool isGapNegatife = rotationGap < 0;
+            if (Mathf.Abs(rotationGap) > 1)
             {
-                float horizontalClamped = Mathf.Clamp(Mathf.Abs(rotationGap / 180), -1, 1);
-                Horizontal = horizontalClamped;
+                float horizontalCalmped = Mathf.Clamp(Mathf.Abs(rotationGap / 180), -1, 1);
+                Horizontal = horizontalCalmped;
             }
             else
             {

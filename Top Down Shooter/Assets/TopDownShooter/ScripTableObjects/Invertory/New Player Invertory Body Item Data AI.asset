@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff9554b0d88e9c4196eb4b193922283, type: 3}
+  m_Name: New Player Invertory Body Item Data AI
+  m_EditorClassIdentifier: 
+  _itemId: AI_body
+  _invertoryItemDataType: 1
+  _prefab: {fileID: 6781854065335027273, guid: a2ff8669b80818a41a850b43529b572c, type: 3}
+  _instantiated: {fileID: 0}
