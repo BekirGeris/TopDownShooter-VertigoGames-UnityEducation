@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 308f1a999f2b255429baff22f3192df7, type: 3}
-  m_Name: Local Player Movement Settings
+  m_Script: {fileID: 11500000, guid: 999540a8cabe60549ad65000cab96eeb, type: 3}
+  m_Name: Tower Rotation Settings AI
   m_EditorClassIdentifier: 
-  HorizontalSpeed: 0.5
-  VerticalSpeed: 0.5
-  RotationSpeed: 1
-  MaxSpeed: 0.5
-  Acceleration: 0.001
+  TowerRotationSpeed: 1
+  TowerCanonRotationSpeed: 0.2
+  TowerCanonRotationAngleMax: 10
+  TowerCanonRotationAngleMin: -15

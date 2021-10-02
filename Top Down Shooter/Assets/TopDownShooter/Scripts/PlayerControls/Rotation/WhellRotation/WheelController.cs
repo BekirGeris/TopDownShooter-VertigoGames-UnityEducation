@@ -7,7 +7,7 @@ namespace TopDownShooter.PlayerControls
 {
     public class WheelController : MonoBehaviour
     {
-        [SerializeField] private InputData _inputData;
+        [SerializeField] private AbstractInputData _inputData;
         [SerializeField] private WheelSettings _wheelSettings;
         [SerializeField] private List<Transform> wheels;
         /*

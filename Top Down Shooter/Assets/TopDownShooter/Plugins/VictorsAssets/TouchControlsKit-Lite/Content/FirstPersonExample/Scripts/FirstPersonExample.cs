@@ -48,6 +48,9 @@ namespace Examples
 
             Vector2 look = TCKInput.GetAxis( "Touchpad" );
             PlayerRotation( look.x, look.y );
+
+            Vector2 lookTower = TCKInput.GetAxis("TouchpadTower");
+            PlayerRotation(lookTower.x, lookTower.y);
         }
 
         // FixedUpdate

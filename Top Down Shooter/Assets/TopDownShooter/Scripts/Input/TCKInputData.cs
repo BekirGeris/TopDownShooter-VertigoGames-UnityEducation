@@ -18,7 +18,14 @@ namespace TopDownShooter.PlayerInput
         {
             if (IsActive)
             {
-
+                if (TCKInput.GetAction(AxisName, EActionEvent.Down))
+                {
+                    Horizontal = 1;
+                }
+                else if (TCKInput.GetAction(AxisName, EActionEvent.Up))
+                {
+                    Horizontal = 0;
+                }
             }
             else
             {
