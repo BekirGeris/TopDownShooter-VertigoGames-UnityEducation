@@ -8,5 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TopDownShooter/Scenes/GameScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/TopDownShooter/Scenes/Initialize.unity
+    guid: 3f7b170630a95b449abcda3078d68b2a
+  - enabled: 1
+    path: Assets/TopDownShooter/Scenes/MainMenu.unity
+    guid: 3efa8bda38dff5845ab98ae4a9f8883e
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 1b73ab841ec429e41bee0ff71431e749, type: 2}

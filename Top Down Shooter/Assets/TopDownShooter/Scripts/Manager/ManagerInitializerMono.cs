@@ -7,6 +7,7 @@ namespace TopDownShooter
     public class ManagerInitializerMono : MonoBehaviour
     {
         [SerializeField] private AbstractBaseScriptabletManager[] _abstractBaseScriptabletManagers;
+        [SerializeField] private bool _dontDestroyOnLoad = true;
         private List<AbstractBaseScriptabletManager> _instantiateAbstractBaseScriptabletManagerList;
 
         public void Start()
@@ -17,6 +18,10 @@ namespace TopDownShooter
                 var instantiated = Instantiate(_abstractBaseScriptabletManager);
                 _abstractBaseScriptabletManager.Initialize();
                 _instantiateAbstractBaseScriptabletManagerList.Add(instantiated);
+            }
+            if (_dontDestroyOnLoad)
+            {
+                DontDestroyOnLoad(gameObject);
             }
         }
 

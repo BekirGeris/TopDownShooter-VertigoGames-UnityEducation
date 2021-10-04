@@ -5,7 +5,7 @@ using UniRx;
 
 namespace TopDownShooter.Network
 { 
-    public enum PlayerNetworkState { offline, Connecting, Connectend, InRoom }
+    public enum PlayerNetworkState { offline, Connecting, Connectend, InRoom, JoinIngRoom }
     public class MachmakingController : Photon.PunBehaviour
     {
         [SerializeField] private float _delayToConnect = 3;
@@ -14,16 +14,38 @@ namespace TopDownShooter.Network
         private void Awake()
         {
             Instance = this;
-            MessageBroker.Default.Publish(new EventPlayerNetworkStateChange(PlayerNetworkState.Connecting));
-            PhotonNetwork.ConnectUsingSettings(_networkVersiyon);
         }
         IEnumerator Start()
         {
+            MessageBroker.Default.Publish(new EventPlayerNetworkStateChange(PlayerNetworkState.offline));
             yield return new WaitForSeconds(_delayToConnect);
+            MessageBroker.Default.Publish(new EventPlayerNetworkStateChange(PlayerNetworkState.Connecting));
+            PhotonNetwork.ConnectUsingSettings(_networkVersiyon);
         }
         public void CreateRoom()
         {
+            MessageBroker.Default.Publish(new EventPlayerNetworkStateChange(PlayerNetworkState.JoinIngRoom));
             PhotonNetwork.CreateRoom(null);
+        }
+        public void OnJoinRandomRoom()
+        {
+            MessageBroker.Default.Publish(new EventPlayerNetworkStateChange(PlayerNetworkState.JoinIngRoom));
+            PhotonNetwork.JoinRandomRoom();
+        }
+        public override void OnJoinedRoom()
+        {
+            base.OnJoinedRoom();
+            MessageBroker.Default.Publish(new EventPlayerNetworkStateChange(PlayerNetworkState.InRoom));
+        }
+        public override void OnLeftRoom()
+        {
+            base.OnLeftRoom();
+            MessageBroker.Default.Publish(new EventPlayerNetworkStateChange(PlayerNetworkState.Connectend));
+        }
+        public override void OnDisconnectedFromPhoton()
+        {
+            base.OnDisconnectedFromPhoton();
+            MessageBroker.Default.Publish(new EventPlayerNetworkStateChange(PlayerNetworkState.offline));
         }
         public override void OnConnectedToMaster()
         {
@@ -36,5 +58,6 @@ namespace TopDownShooter.Network
             base.OnJoinedLobby();
             Debug.Log("ON JOÝNED LOBBY");   
         }
+        
     }
 }
