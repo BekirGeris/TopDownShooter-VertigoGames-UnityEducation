@@ -43,4 +43,5 @@ MonoBehaviour:
   - RequestForPickupItems
   - RequestForPickupTimes
   - TaggedPlayer
+  - APC_InstantiateLocalPlayer
   DisableAutoOpenWizard: 1
